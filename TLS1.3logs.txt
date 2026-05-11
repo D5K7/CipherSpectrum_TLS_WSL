@@ -1,0 +1,338 @@
+moran@LAPTOP-22T08PP3:~/CipherSpectrum_TLS 1.3$ python3 scripts/pipeline_ubuntu.py \
+  --phases infer-benchmark \
+  --run-name ubuntu_baseline_mamba_lite_v2 \
+  --compile
+== Inference Benchmark ==
+{
+  "run_name": "ubuntu_baseline_mamba_lite_v2",
+  "checkpoint_path": "/home/moran/CipherSpectrum_TLS 1.3/outputs/ubuntu_baseline_mamba_lite_v2/best_model.pt",
+  "samples": 18450,
+  "test_loss": 0.09671575848839577,
+  "test_infer_samples_per_sec": 159798.1426399689,
+  "test_infer_benchmark_sec": 0.11545816299985745,
+  "test_elapsed_sec": 1.1715677700012748,
+  "accuracy": 0.9620054200542005,
+  "compile_for_inference": false,
+  "inference_warmup_batches": 4,
+  "preload_test": true,
+  "num_workers": 0,
+  "saved_accuracy": 0.9620054200542005,
+  "saved_test_infer_samples_per_sec": 53127.64000451306
+}
+
+moran@LAPTOP-22T08PP3:~/CipherSpectrum_TLS 1.3$ python3 scripts/pipeline_ubuntu.py   --phases precompute train infer-benchmark visualize-run   --run-name ubuntu_baseline_mamba_lite_v2   --compile
+Precompute skipped: existing tensor cache is complete.
+cache key: 6857a7b0b0234c35d9d90fac7db4a1ea4a3aabc8
+pt dir: /home/moran/CipherSpectrum_TLS 1.3/outputs/precomputed_cache/6857a7b0b0234c35d9d90fac7db4a1ea4a3aabc8
+rows: 123000
+index: /home/moran/CipherSpectrum_TLS 1.3/outputs/precomputed_cache/6857a7b0b0234c35d9d90fac7db4a1ea4a3aabc8/precomputed_index.csv
+== Full Training ==
+epoch:   0%|                                                                                     | 0/20 [00:00<?, ?it/s[debug-input-stats] phase=train e1 x_seq[min,max]=(-1, 9.57505) x_bytes[min,max]=(0, 1) nan(seq,bytes)=(False, False) inf(seq,bytes)=(False, False)
+epoch: 100%|██████████████████████████████| 20/20 [02:11<00:00,  6.59s/it, eta_min=0.0, val_acc=0.9651, val_loss=0.0879]
+{
+  "run_name": "ubuntu_baseline_mamba_lite_v2",
+  "feature_mode": "baseline",
+  "model_name": "mamba_lite",
+  "test_loss": 0.09671677420361946,
+  "test_mutual_info_cipher_pred": 0.0038531317303217476,
+  "test_infer_samples_per_sec": 152417.69407452186,
+  "test_infer_benchmark_sec": 0.12104893799914862,
+  "test_eval_sec": 0.5136199970002053,
+  "elapsed_total_sec": 152.02252351599964,
+  "accuracy": 0.9620054200542005,
+  "macro_f1": 0.9558323639155235
+}
+Elapsed (sec): 152.23
+Checkpoint exists: True
+Checkpoint path: /home/moran/CipherSpectrum_TLS 1.3/outputs/ubuntu_baseline_mamba_lite_v2/best_model.pt
+== Inference Benchmark ==
+{
+  "run_name": "ubuntu_baseline_mamba_lite_v2",
+  "checkpoint_path": "/home/moran/CipherSpectrum_TLS 1.3/outputs/ubuntu_baseline_mamba_lite_v2/best_model.pt",
+  "samples": 18450,
+  "test_loss": 0.09671677420361946,
+  "test_infer_samples_per_sec": 132740.332506248,
+  "test_infer_benchmark_sec": 0.13899317299910763,
+  "test_elapsed_sec": 0.4936152129994298,
+  "accuracy": 0.9620054200542005,
+  "compile_for_inference": false,
+  "inference_warmup_batches": 4,
+  "preload_test": true,
+  "num_workers": 0,
+  "saved_accuracy": 0.9620054200542005,
+  "saved_test_infer_samples_per_sec": 152417.69407452186
+}
+== Visualize Run ==
+Metrics summary:
+{
+  "run_name": "ubuntu_baseline_mamba_lite_v2",
+  "feature_mode": "baseline",
+  "model_name": "mamba_lite",
+  "test_loss": 0.09671677420361946,
+  "test_mutual_info_cipher_pred": 0.0038531317303217476,
+  "test_infer_samples_per_sec": 152417.69407452186,
+  "test_infer_benchmark_sec": 0.12104893799914862,
+  "test_eval_sec": 0.5136199970002053,
+  "elapsed_total_sec": 152.02252351599964,
+  "accuracy": 0.9620054200542005,
+  "macro_f1": 0.9558323639155235
+}
+Classification report keys: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+Training curves: /home/moran/CipherSpectrum_TLS 1.3/outputs/ubuntu_baseline_mamba_lite_v2/training_curves.png
+Confusion matrix: /home/moran/CipherSpectrum_TLS 1.3/outputs/ubuntu_baseline_mamba_lite_v2/confusion_matrix.png
+
+
+
+
+moran@LAPTOP-22T08PP3:~/CipherSpectrum_TLS 1.3$ python3 scripts/run_notebook_suite.py
+== Environment Check ==
+Platform: linux
+Python: /usr/bin/python3
+Project root: /home/moran/CipherSpectrum_TLS 1.3
+Data root: /home/moran/CipherSpectrum_TLS 1.3/data
+Output dir: /home/moran/CipherSpectrum_TLS 1.3/outputs
+Torch version: 2.11.0+cu128
+CUDA available: True
+Triton installed: True
+torch.compile available: True
+compile requested: False
+compile enabled: False
+compile status: compile not requested
+CUDA device: NVIDIA GeForce RTX 5090 Laptop GPU
+VRAM total: 23.9 GB
+TF32 enabled: True
+float32 matmul precision: high
+Precompute skipped: existing tensor cache is complete.
+cache key: 6857a7b0b0234c35d9d90fac7db4a1ea4a3aabc8
+pt dir: /home/moran/CipherSpectrum_TLS 1.3/outputs/precomputed_cache/6857a7b0b0234c35d9d90fac7db4a1ea4a3aabc8
+rows: 123000
+index: /home/moran/CipherSpectrum_TLS 1.3/outputs/precomputed_cache/6857a7b0b0234c35d9d90fac7db4a1ea4a3aabc8/precomputed_index.csv
+== Single Batch Overfit ==
+step=  1 | loss=3.763255 | acc=0.0625
+step=  2 | loss=3.522071 | acc=0.2500
+step=  5 | loss=3.115426 | acc=0.1250
+step= 10 | loss=2.623459 | acc=0.1875
+step= 20 | loss=2.033542 | acc=0.2812
+step= 50 | loss=0.101436 | acc=1.0000
+step=100 | loss=0.003374 | acc=1.0000
+step=150 | loss=0.001024 | acc=1.0000
+step=200 | loss=0.001204 | acc=1.0000
+step=250 | loss=0.000398 | acc=1.0000
+step=300 | loss=0.000091 | acc=1.0000
+{
+  "step": 300,
+  "loss": 9.064857295015827e-05,
+  "accuracy": 1.0,
+  "passed": true
+}
+== One Epoch Diagnostic Train ==
+epoch:   0%|                                                                                      | 0/1 [00:00<?, ?it/s[debug-input-stats] phase=train e1 x_seq[min,max]=(-1, 9.57505) x_bytes[min,max]=(0, 1) nan(seq,bytes)=(False, False) inf(seq,bytes)=(False, False)
+epoch: 100%|████████████████████████████████| 1/1 [00:08<00:00,  8.51s/it, eta_min=0.0, val_acc=0.0320, val_loss=3.7405]
+{
+  "run_name": "suite_baseline_mamba_lite_diag",
+  "feature_mode": "baseline",
+  "model_name": "mamba_lite",
+  "test_loss": 3.7410724526045644,
+  "test_mutual_info_cipher_pred": 0.00016127926704184638,
+  "test_infer_samples_per_sec": 150949.36720722276,
+  "test_infer_benchmark_sec": 0.12222641499829479,
+  "test_eval_sec": 0.5581477810010256,
+  "elapsed_total_sec": 28.40980254600072,
+  "accuracy": 0.02986449864498645,
+  "macro_f1": 0.0034585735976908664
+}
+== Full Training ==
+epoch:   0%|                                                                                     | 0/20 [00:00<?, ?it/s[debug-input-stats] phase=train e1 x_seq[min,max]=(-1, 9.57505) x_bytes[min,max]=(0, 1) nan(seq,bytes)=(False, False) inf(seq,bytes)=(False, False)
+epoch: 100%|██████████████████████████████| 20/20 [02:10<00:00,  6.51s/it, eta_min=0.0, val_acc=0.9651, val_loss=0.0879]
+{
+  "run_name": "suite_baseline_mamba_lite",
+  "feature_mode": "baseline",
+  "model_name": "mamba_lite",
+  "test_loss": 0.09671677420361946,
+  "test_mutual_info_cipher_pred": 0.0038531317303217476,
+  "test_infer_samples_per_sec": 140288.28672625087,
+  "test_infer_benchmark_sec": 0.13151490000018384,
+  "test_eval_sec": 0.464194875999965,
+  "elapsed_total_sec": 152.39454574800038,
+  "accuracy": 0.9620054200542005,
+  "macro_f1": 0.9558323639155235
+}
+Elapsed (sec): 149.75
+Checkpoint exists: True
+Checkpoint path: /home/moran/CipherSpectrum_TLS 1.3/outputs/suite_baseline_mamba_lite/best_model.pt
+== Inference Benchmark ==
+{
+  "run_name": "suite_baseline_mamba_lite",
+  "checkpoint_path": "/home/moran/CipherSpectrum_TLS 1.3/outputs/suite_baseline_mamba_lite/best_model.pt",
+  "samples": 18450,
+  "test_loss": 0.09671677420361946,
+  "test_infer_samples_per_sec": 131801.44855333157,
+  "test_infer_benchmark_sec": 0.13998328700108686,
+  "test_elapsed_sec": 0.45179995800208417,
+  "accuracy": 0.9620054200542005,
+  "compile_for_inference": false,
+  "inference_warmup_batches": 4,
+  "preload_test": true,
+  "num_workers": 0,
+  "saved_accuracy": 0.9620054200542005,
+  "saved_test_infer_samples_per_sec": 140288.28672625087
+}
+== Cross Cipher Evaluation ==
+precompute: 100%|███████████████████████████████████████████████████████████████| 41000/41000 [00:09<00:00, 4183.86it/s]
+[debug-input-stats] phase=cross-cipher-test x_seq[min,max]=(-1, 9.91151) x_bytes[min,max]=(0, 1) nan(seq,bytes)=(False, False) inf(seq,bytes)=(False, False)
+{
+  "run_name": "suite_baseline_mamba_lite_cross",
+  "feature_mode": "baseline",
+  "model_name": "mamba_lite",
+  "test_loss": 0.059164088824981906,
+  "test_mutual_info_cipher_pred": 0.0,
+  "test_infer_samples_per_sec": 145299.71871419516,
+  "test_infer_benchmark_sec": 0.2821753569987777,
+  "test_eval_sec": 2.2850171879981644,
+  "elapsed_eval_sec": 19.41856623000058,
+  "accuracy": 0.9767317073170732,
+  "macro_f1": 0.9536255118513699,
+  "train_ciphers": [
+    "aes-128-gcm",
+    "aes-256-gcm"
+  ],
+  "test_ciphers": [
+    "chacha20-poly1305"
+  ]
+}
+== Visualize Run ==
+Metrics summary:
+{
+  "run_name": "suite_baseline_mamba_lite",
+  "feature_mode": "baseline",
+  "model_name": "mamba_lite",
+  "test_loss": 0.09671677420361946,
+  "test_mutual_info_cipher_pred": 0.0038531317303217476,
+  "test_infer_samples_per_sec": 140288.28672625087,
+  "test_infer_benchmark_sec": 0.13151490000018384,
+  "test_eval_sec": 0.464194875999965,
+  "elapsed_total_sec": 152.39454574800038,
+  "accuracy": 0.9620054200542005,
+  "macro_f1": 0.9558323639155235
+}
+Classification report keys: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+Training curves: /home/moran/CipherSpectrum_TLS 1.3/outputs/suite_baseline_mamba_lite/training_curves.png
+Confusion matrix: /home/moran/CipherSpectrum_TLS 1.3/outputs/suite_baseline_mamba_lite/confusion_matrix.png
+== Experiment Matrix ==
+=== G1_baseline | mamba_lite | mode=baseline ===
+matrix cache key: 6857a7b0b0234c35d9d90fac7db4a1ea4a3aabc8
+matrix precompute cache: /home/moran/CipherSpectrum_TLS 1.3/outputs/precomputed_cache/6857a7b0b0234c35d9d90fac7db4a1ea4a3aabc8/precomputed_index.csv
+Reusing completed training run: ubuntu_G1_baseline_mamba_lite
+=== G2_header_only | mamba_lite | mode=header_only ===
+matrix cache key: 14f2c827279498322cc0e12398195a51c5d1c0cb
+Reusing completed training run: ubuntu_G2_header_only_mamba_lite
+=== G3_payload_only | mamba_lite | mode=payload_only ===
+matrix cache key: d843a2169b93c2cbc9998176c4468a3299b4b969
+Reusing completed training run: ubuntu_G3_payload_only_mamba_lite
+=== G4_length_only | mamba_lite | mode=length_only ===
+matrix cache key: 40a55d6515179fb0f9ad78cbdf36e85d427f6585
+Reusing completed training run: ubuntu_G4_length_only_mamba_lite
+=== G5_size_agnostic | mamba_lite | mode=size_agnostic ===
+matrix cache key: 8288035295ecbc702630cbe822f8c3a128abd7e2
+Reusing completed training run: ubuntu_G5_size_agnostic_mamba_lite
+=== G6_cross_cipher | mamba_lite | mode=baseline ===
+matrix cache key: 6857a7b0b0234c35d9d90fac7db4a1ea4a3aabc8
+matrix precompute cache: /home/moran/CipherSpectrum_TLS 1.3/outputs/precomputed_cache/6857a7b0b0234c35d9d90fac7db4a1ea4a3aabc8/precomputed_index.csv
+Reusing completed training run: ubuntu_G6_cross_cipher_mamba_lite
+cross-cipher cache key: 437d76e001ce5f6904ed2fb0f842dd8f9557ba6e
+[debug-input-stats] phase=cross-cipher-test x_seq[min,max]=(-1, 9.91151) x_bytes[min,max]=(0, 1) nan(seq,bytes)=(False, False) inf(seq,bytes)=(False, False)
+=== G1_baseline | transformer | mode=baseline ===
+matrix cache key: 6857a7b0b0234c35d9d90fac7db4a1ea4a3aabc8
+matrix precompute cache: /home/moran/CipherSpectrum_TLS 1.3/outputs/precomputed_cache/6857a7b0b0234c35d9d90fac7db4a1ea4a3aabc8/precomputed_index.csv
+Reusing completed training run: ubuntu_G1_baseline_transformer
+=== G2_header_only | transformer | mode=header_only ===
+matrix cache key: 14f2c827279498322cc0e12398195a51c5d1c0cb
+Reusing completed training run: ubuntu_G2_header_only_transformer
+=== G3_payload_only | transformer | mode=payload_only ===
+matrix cache key: d843a2169b93c2cbc9998176c4468a3299b4b969
+Reusing completed training run: ubuntu_G3_payload_only_transformer
+=== G4_length_only | transformer | mode=length_only ===
+matrix cache key: 40a55d6515179fb0f9ad78cbdf36e85d427f6585
+Reusing completed training run: ubuntu_G4_length_only_transformer
+=== G5_size_agnostic | transformer | mode=size_agnostic ===
+matrix cache key: 8288035295ecbc702630cbe822f8c3a128abd7e2
+Reusing completed training run: ubuntu_G5_size_agnostic_transformer
+=== G6_cross_cipher | transformer | mode=baseline ===
+matrix cache key: 6857a7b0b0234c35d9d90fac7db4a1ea4a3aabc8
+matrix precompute cache: /home/moran/CipherSpectrum_TLS 1.3/outputs/precomputed_cache/6857a7b0b0234c35d9d90fac7db4a1ea4a3aabc8/precomputed_index.csv
+Reusing completed training run: ubuntu_G6_cross_cipher_transformer
+cross-cipher cache key: 437d76e001ce5f6904ed2fb0f842dd8f9557ba6e
+[debug-input-stats] phase=cross-cipher-test x_seq[min,max]=(-1, 9.91151) x_bytes[min,max]=(0, 1) nan(seq,bytes)=(False, False) inf(seq,bytes)=(False, False)
+Results saved to: /home/moran/CipherSpectrum_TLS 1.3/outputs/ubuntu_experiment_matrix_results.csv
+== Visualize Matrix ==
+Heatmap: /home/moran/CipherSpectrum_TLS 1.3/outputs/ubuntu_feature_heatmap.png
+Matrix summary plot: /home/moran/CipherSpectrum_TLS 1.3/outputs/ubuntu_matrix_summary.png
+== Shortcut Learning Diagnosis ==
+           group  model_name  accuracy  macro_f1  MI(cipher,pred)
+     G1_baseline  mamba_lite  0.962276  0.956361         0.003912
+  G2_header_only  mamba_lite  0.450190  0.429324         0.011756
+ G3_payload_only  mamba_lite  0.956965  0.951649         0.004700
+  G4_length_only  mamba_lite  0.891491  0.874483         0.000795
+G5_size_agnostic  mamba_lite  0.913821  0.899042         0.000592
+ G6_cross_cipher  mamba_lite  0.962276  0.956361         0.003912
+     G1_baseline transformer  0.868238  0.862972         0.003324
+  G2_header_only transformer  0.275285  0.209273         0.008492
+ G3_payload_only transformer  0.032520  0.003142         0.000595
+  G4_length_only transformer  0.833388  0.817033         0.002001
+G5_size_agnostic transformer  0.889864  0.872309         0.003275
+ G6_cross_cipher transformer  0.911436  0.904159         0.002700
+          group  model_name  accuracy  macro_f1  acc_drop_vs_in_cipher
+G6_cross_cipher  mamba_lite  0.974585  0.951855              -0.012309
+G6_cross_cipher transformer  0.921659  0.900881              -0.010222
+Shortcut diagnosis plot: /home/moran/CipherSpectrum_TLS 1.3/outputs/ubuntu_shortcut_diagnosis.png
+SOTA precompute skipped: existing cache is complete.
+rows: 123000
+pt dir: /home/moran/CipherSpectrum_TLS 1.3/outputs/sota_shared_payload_only/precomputed_features
+index: /home/moran/CipherSpectrum_TLS 1.3/outputs/sota_shared_payload_only/precomputed_index.csv
+
+============================================================
+  Training: NetMambaLite (mamba_lite)
+============================================================
+  Reusing completed training run: sota_compare_mamba_lite
+  -> test_acc=0.9556 macro_f1=0.9513 infer_sps=20355 total_sec=376s
+
+============================================================
+  Training: Transformer (transformer)
+============================================================
+  Reusing completed training run: sota_compare_transformer
+  -> test_acc=0.9069 macro_f1=0.9009 infer_sps=30792 total_sec=301s
+
+============================================================
+  Training: 1D-CNN (cnn1d)
+============================================================
+  Reusing completed training run: sota_compare_cnn1d
+  -> test_acc=0.9432 macro_f1=0.9376 infer_sps=48349 total_sec=281s
+
+============================================================
+  Training: BiLSTM (lstm)
+============================================================
+  Reusing completed training run: sota_compare_lstm
+  -> test_acc=0.9502 macro_f1=0.9442 infer_sps=37682 total_sec=300s
+Cross-cipher eval: NetMambaLite
+  Cross-cipher cache key: 4c580c6160a07cc3241c38360837c1cdeb5b3da4
+  cross_cipher_acc=0.9718 macro_f1=0.9489
+Cross-cipher eval: Transformer
+  Cross-cipher cache key: 4c580c6160a07cc3241c38360837c1cdeb5b3da4
+precompute: 100%|███████████████████████████████████████████████████████████████| 41000/41000 [00:39<00:00, 1041.71it/s]
+  cross_cipher_acc=0.9145 macro_f1=0.8947
+Cross-cipher eval: 1D-CNN
+  Cross-cipher cache key: 4c580c6160a07cc3241c38360837c1cdeb5b3da4
+precompute: 100%|███████████████████████████████████████████████████████████████| 41000/41000 [00:09<00:00, 4437.01it/s]
+  cross_cipher_acc=0.9632 macro_f1=0.9409
+Cross-cipher eval: BiLSTM
+  Cross-cipher cache key: 4c580c6160a07cc3241c38360837c1cdeb5b3da4
+precompute: 100%|███████████████████████████████████████████████████████████████| 41000/41000 [00:09<00:00, 4222.88it/s]
+  cross_cipher_acc=0.9696 macro_f1=0.9469
+Results saved to: /home/moran/CipherSpectrum_TLS 1.3/outputs/sota_comparison_results.csv
+Chart saved to: /home/moran/CipherSpectrum_TLS 1.3/outputs/sota_comparison_chart.png
+Radar chart saved to: /home/moran/CipherSpectrum_TLS 1.3/outputs/sota_radar_chart.png
+Link coverage saved to: /home/moran/CipherSpectrum_TLS 1.3/outputs/sota_link_coverage.csv
+Complexity chart saved to: /home/moran/CipherSpectrum_TLS 1.3/outputs/complexity_comparison.png
+Throughput chart saved to: /home/moran/CipherSpectrum_TLS 1.3/outputs/throughput_vs_T.png
+Synthetic throughput CSV saved to: /home/moran/CipherSpectrum_TLS 1.3/outputs/throughput_vs_T.csv
+Suite summary saved to: /home/moran/CipherSpectrum_TLS 1.3/outputs/notebook_suite_summary.json

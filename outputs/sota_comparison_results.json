@@ -1,0 +1,38 @@
+[
+  {
+    "Model":"NetMambaLite",
+    "InDist Acc (%)":95.56,
+    "Macro F1":0.9513,
+    "Cross-Cipher Acc (%)":97.18,
+    "Acc-Drop (pp)":-1.62,
+    "Infer Speed (sps)":147270,
+    "Train Time (sec)":375.67
+  },
+  {
+    "Model":"Transformer",
+    "InDist Acc (%)":90.68,
+    "Macro F1":0.9009,
+    "Cross-Cipher Acc (%)":91.45,
+    "Acc-Drop (pp)":-0.77,
+    "Infer Speed (sps)":199040,
+    "Train Time (sec)":300.99
+  },
+  {
+    "Model":"1D-CNN",
+    "InDist Acc (%)":94.32,
+    "Macro F1":0.9376,
+    "Cross-Cipher Acc (%)":96.32,
+    "Acc-Drop (pp)":-2.0,
+    "Infer Speed (sps)":432484,
+    "Train Time (sec)":280.69
+  },
+  {
+    "Model":"BiLSTM",
+    "InDist Acc (%)":95.02,
+    "Macro F1":0.9442,
+    "Cross-Cipher Acc (%)":96.96,
+    "Acc-Drop (pp)":-1.94,
+    "Infer Speed (sps)":173449,
+    "Train Time (sec)":299.52
+  }
+]

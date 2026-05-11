@@ -1,0 +1,8 @@
+run_name,feature_mode,model_name,test_loss,test_mutual_info_cipher_pred,test_infer_samples_per_sec,elapsed_total_sec,accuracy,macro_f1,group,metric_type,elapsed_eval_sec,train_ciphers,test_ciphers,acc_drop_vs_in_cipher
+notebook_G1_baseline_mamba_lite,baseline,mamba_lite,0.09774916975693392,0.004296994584461513,27269.80881869821,565.4506109000067,0.9618428184281843,0.9569994923424441,G1_baseline,in_cipher,,,,
+notebook_G2_header_only_mamba_lite,header_only,mamba_lite,1.6651915646767224,0.011392696717310188,24268.147641657753,542.7719368000107,0.4310027100271003,0.4055431024269128,G2_header_only,in_cipher,,,,
+notebook_G3_payload_only_mamba_lite,payload_only,mamba_lite,0.11531845159880225,0.004399593157082572,27395.58828658478,546.9228393000085,0.9568021680216802,0.9517851020318389,G3_payload_only,in_cipher,,,,
+notebook_G4_length_only_mamba_lite,length_only,mamba_lite,0.2576600325690215,0.0026976305611587743,26951.933527662426,525.4191907999921,0.8957181571815718,0.8801914685150617,G4_length_only,in_cipher,,,,
+notebook_G5_size_agnostic_mamba_lite,size_agnostic,mamba_lite,0.20433355775697215,0.0013793747527880687,26833.026584319123,525.2026369000087,0.9140921409214092,0.8977731956711107,G5_size_agnostic,in_cipher,,,,
+notebook_G6_cross_cipher_mamba_lite,baseline,mamba_lite,0.09774916975693392,0.004296994584461513,27293.614049238946,545.3948489000031,0.9618428184281843,0.9569994923424441,G6_cross_cipher,in_cipher,,,,
+notebook_G6_cross_cipher_mamba_lite_cross,baseline,mamba_lite,0.06122021898975982,0.0,508.98900403005774,,0.9759268292682927,0.9529705133858858,G6_cross_cipher,cross_cipher,165.3796757000091,"['aes-128-gcm', 'aes-256-gcm']",['chacha20-poly1305'],-0.014084010840108352

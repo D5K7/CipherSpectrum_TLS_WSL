@@ -1,0 +1,31 @@
+{
+  "phases": [
+    "env-check",
+    "precompute",
+    "single-batch",
+    "diagnostic-train",
+    "train",
+    "infer-benchmark",
+    "cross-eval",
+    "visualize-run",
+    "matrix",
+    "visualize-matrix",
+    "shortcut-diagnosis",
+    "sota-precompute",
+    "sota-train",
+    "sota-cross",
+    "sota-summary",
+    "sota-plots",
+    "throughput-analysis",
+    "synthetic-benchmark",
+    "feasibility-summary"
+  ],
+  "baseline_run_name": "suite_baseline_mamba_lite",
+  "matrix_results_csv": "/home/moran/CipherSpectrum_TLS 1.3/outputs/ubuntu_experiment_matrix_results.csv",
+  "sota_results_csv": "/home/moran/CipherSpectrum_TLS 1.3/outputs/sota_comparison_results.csv",
+  "coverage_csv": "/home/moran/CipherSpectrum_TLS 1.3/outputs/sota_link_coverage.csv",
+  "throughput_csv": "/home/moran/CipherSpectrum_TLS 1.3/outputs/throughput_vs_T.csv",
+  "sota_rows": 4,
+  "coverage_rows": 4,
+  "synthetic_rows": 32
+}

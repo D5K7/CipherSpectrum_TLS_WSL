@@ -1,0 +1,5 @@
+Model,InDist Acc (%),Macro F1,Cross-Cipher Acc (%),Acc-Drop (pp),Infer Speed (sps),Train Time (sec)
+NetMambaLite,95.56,0.9513,97.18,-1.62,147270,375.67
+Transformer,90.68,0.9009,91.45,-0.77,199040,300.99
+1D-CNN,94.32,0.9376,96.32,-2.0,432484,280.69
+BiLSTM,95.02,0.9442,96.96,-1.94,173449,299.52

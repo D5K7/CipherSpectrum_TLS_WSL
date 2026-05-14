@@ -1,0 +1,45 @@
+=== G1_baseline | etbert | mode=baseline ===
+epoch: 100%|███████████████████████████| 20/20 [1:05:20<00:00, 196.05s/it, eta_min=0.0, val_acc=0.9578, val_loss=0.1149]
+=== G1_baseline | yatc | mode=baseline ===
+epoch: 100%|██████████████████████████████| 20/20 [02:32<00:00,  7.64s/it, eta_min=0.0, val_acc=0.9380, val_loss=0.1581]
+=== G2_header_only | etbert | mode=header_only ===
+precompute: 100%|█████████████████████████████████████████████████████████████| 123000/123000 [00:58<00:00, 2109.47it/s]
+epoch: 100%|██████████████████████████████████████████████████████████████████████████████████████| 20/20 [1:04:24<00:00, 193.22s/it, eta_min=0.0, val_acc=0.3121, val_loss=2.2536]
+=== G3_payload_only | etbert | mode=payload_only ===
+precompute: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 123000/123000 [00:55<00:00, 2208.69it/s]
+epoch: 100%|██████████████████████████████████████████████████████████████████████████████████████| 20/20 [1:04:01<00:00, 192.07s/it, eta_min=0.0, val_acc=0.9617, val_loss=0.1078]
+=== G4_length_only | etbert | mode=length_only ===
+precompute: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 123000/123000 [00:58<00:00, 2113.80it/s]
+epoch: 100%|██████████████████████████████████████████████████████████████████████████████████████| 20/20 [1:03:52<00:00, 191.65s/it, eta_min=0.0, val_acc=0.1990, val_loss=2.7702]
+=== G5_size_agnostic | etbert | mode=size_agnostic ===
+precompute: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 123000/123000 [00:58<00:00, 2116.29it/s]
+epoch: 100%|██████████████████████████████████████████████████████████████████████████████████████| 20/20 [1:03:57<00:00, 191.90s/it, eta_min=0.0, val_acc=0.3887, val_loss=1.9796]
+=== G6_cross_cipher | etbert | mode=baseline ===
+epoch: 100%|██████████████████████████████████████████████████████████████████████████████████████| 20/20 [1:04:05<00:00, 192.29s/it, eta_min=0.0, val_acc=0.9642, val_loss=0.1051]
+precompute: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 41000/41000 [00:16<00:00, 2435.99it/s]
+=== G2_header_only | yatc | mode=header_only ===
+epoch: 100%|█████████████████████████████████████████████████████████████████████████████████████████| 20/20 [02:15<00:00,  6.80s/it, eta_min=0.0, val_acc=0.4197, val_loss=1.7321]
+=== G3_payload_only | yatc | mode=payload_only ===
+epoch: 100%|█████████████████████████████████████████████████████████████████████████████████████████| 20/20 [02:14<00:00,  6.71s/it, eta_min=0.0, val_acc=0.9388, val_loss=0.1664]
+=== G4_length_only | yatc | mode=length_only ===
+epoch: 100%|█████████████████████████████████████████████████████████████████████████████████████████| 20/20 [02:15<00:00,  6.75s/it, eta_min=0.0, val_acc=0.8237, val_loss=0.4673]
+=== G5_size_agnostic | yatc | mode=size_agnostic ===
+epoch: 100%|█████████████████████████████████████████████████████████████████████████████████████████| 20/20 [02:14<00:00,  6.73s/it, eta_min=0.0, val_acc=0.8579, val_loss=0.3575]
+=== G6_cross_cipher | yatc | mode=baseline ===
+epoch: 100%|█████████████████████████████████████████████████████████████████████████████████████████| 20/20 [02:13<00:00,  6.70s/it, eta_min=0.0, val_acc=0.9384, val_loss=0.1577]
+=== P3_payload_only_debiased | etbert | mode=payload_only ===
+epoch: 100%|██████████████████████████████████████████████████████████████████████████████████████| 20/20 [1:04:50<00:00, 194.53s/it, eta_min=0.0, val_acc=0.7748, val_loss=4.6728]
+=== P3_cross_cipher_debiased | etbert | mode=payload_only ===
+epoch: 100%|██████████████████████████████████████████████████████████████████████████████████████| 20/20 [1:04:47<00:00, 194.36s/it, eta_min=0.0, val_acc=0.7817, val_loss=4.6341]
+=== P3_payload_only_debiased | yatc | mode=payload_only ===
+epoch: 100%|█████████████████████████████████████████████████████████████████████████████████████████| 20/20 [02:30<00:00,  7.54s/it, eta_min=0.0, val_acc=0.9489, val_loss=1.4019]
+=== P3_cross_cipher_debiased | yatc | mode=payload_only ===
+epoch: 100%|█████████████████████████████████████████████████████████████████████████████████████████| 20/20 [02:31<00:00,  7.56s/it, eta_min=0.0, val_acc=0.9480, val_loss=1.3703]
+Reproduced results saved to: /home/moran/CipherSpectrum_TLS 1.3/outputs/shortcut_compare_full_artifacts/shortcut_compare_reproduced_runs.csv
+Combined results saved to: /home/moran/CipherSpectrum_TLS 1.3/outputs/shortcut_compare_full_artifacts/shortcut_compare_results.csv
+Combined JSON saved to: /home/moran/CipherSpectrum_TLS 1.3/outputs/shortcut_compare_full_artifacts/shortcut_compare_results.json
+Summary saved to: /home/moran/CipherSpectrum_TLS 1.3/outputs/shortcut_compare_full_artifacts/shortcut_compare_summary.json
+Plot saved to: /home/moran/CipherSpectrum_TLS 1.3/outputs/shortcut_compare_full_artifacts/shortcut_compare_occlusion_macro_f1.png
+Plot saved to: /home/moran/CipherSpectrum_TLS 1.3/outputs/shortcut_compare_full_artifacts/shortcut_compare_cross_cipher_drop.png
+Plot saved to: /home/moran/CipherSpectrum_TLS 1.3/outputs/shortcut_compare_full_artifacts/shortcut_compare_efficiency.png
+Plot saved to: /home/moran/CipherSpectrum_TLS 1.3/outputs/shortcut_compare_full_artifacts/shortcut_compare_shortcut_proxy.png

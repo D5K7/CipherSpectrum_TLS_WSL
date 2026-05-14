@@ -1,0 +1,25 @@
+{
+  "rows": 34,
+  "models": [
+    "ET-BERT",
+    "NetMambaLite",
+    "Transformer",
+    "YaTC"
+  ],
+  "groups": [
+    "G1_baseline",
+    "G2_header_only",
+    "G3_payload_only",
+    "G4_length_only",
+    "G5_size_agnostic",
+    "G6_cross_cipher",
+    "P3_cross_cipher_debiased",
+    "P3_payload_only_debiased"
+  ],
+  "best_in_cipher_macro_f1": {
+    "model": "ET-BERT",
+    "group": "G6_cross_cipher",
+    "macro_f1": 0.9595586534991727,
+    "accuracy": 0.9604878048780487
+  }
+}
